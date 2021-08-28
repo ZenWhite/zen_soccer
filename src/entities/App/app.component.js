@@ -5,10 +5,12 @@ import { ChakraProvider, Container } from '@chakra-ui/react'
 import 'focus-visible/dist/focus-visible'
 import '@fontsource/open-sans'
 
-import { theme } from '~theme.js'
+import { theme } from 'theme.js'
 
-import { Header } from '~components/Header/header.component'
-import { Footer } from '~components/Footer/footer.component'
+import { Header } from 'components/Header/header.component'
+import { Footer } from 'components/Footer/footer.component'
+
+import { League } from 'League/league.component'
 
 import { Main } from './app.styled'
 
@@ -18,7 +20,11 @@ export const App = () => (
       <Header />
 
       <Main>
-        <Container maxW="container.xl">main</Container>
+        <Container maxW="container.xl">
+          <Switch>
+            <Route path={['/', '/league']} exact component={League} />
+          </Switch>
+        </Container>
       </Main>
 
       <Footer />

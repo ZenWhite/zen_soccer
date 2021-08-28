@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { links } from './navigation.shape'
 
 export const Navigation = () => (
-  <HStack spacing="36px">
+  <HStack spacing="36px" as="nav">
     {links.map((link, id) => (
       <Link
         as={NavLink}

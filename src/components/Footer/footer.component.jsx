@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '@chakra-ui/react'
 
-import { Logo } from '~components/Logo/logo.component'
+import { Logo } from 'components/Logo/logo.component'
 
 import { Wrapper } from './footer.styled'
 

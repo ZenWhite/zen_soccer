@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Image } from '@chakra-ui/react'
 
-import logo from '~assets/images/logo.png'
+import logo from 'images/logo.png'
 
 import { Container } from './logo.styled'
 
