@@ -1,13 +1,15 @@
-import React from 'react'
-import { Container } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 
 import { Logo } from 'components/Logo/logo.component'
 import { Navigation } from './Navigation/navigation.component'
 
-import { Wrapper } from './header.styled'
-
 export const Header = () => (
-  <Wrapper>
+  <Box
+    as="header"
+    p="20px 0"
+    borderBottom="1px solid"
+    borderBottomColor="blackAlpha.700"
+  >
     <Container
       maxW="container.xl"
       d="flex"
@@ -18,5 +20,5 @@ export const Header = () => (
 
       <Navigation />
     </Container>
-  </Wrapper>
+  </Box>
 )

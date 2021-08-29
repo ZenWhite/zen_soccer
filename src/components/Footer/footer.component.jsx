@@ -1,14 +1,11 @@
-import React from 'react'
-import { Container } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 
 import { Logo } from 'components/Logo/logo.component'
 
-import { Wrapper } from './footer.styled'
-
 export const Footer = () => (
-  <Wrapper>
-    <Container d="flex" justifyContent="center" maxW="container.xl">
+  <Box as="footer" marginTop="auto" p="20px 0" background="blackAlpha.900">
+    <Container centerContent maxW="container.xl">
       <Logo />
     </Container>
-  </Wrapper>
+  </Box>
 )

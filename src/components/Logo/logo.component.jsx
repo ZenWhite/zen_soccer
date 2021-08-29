@@ -1,15 +1,21 @@
-import React from 'react'
-import { Box, Heading, Image } from '@chakra-ui/react'
+import { Box, Heading, Image, keyframes } from '@chakra-ui/react'
 
 import logo from 'images/logo.png'
 
-import { Container } from './logo.styled'
+const spin = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`
 
 export const Logo = () => (
   <Box d="flex" alignItems="center">
-    <Container>
-      <Image src={logo} alt="logo" w={26} h={26} />
-    </Container>
+    <Image
+      animation={`${spin} 12s linear infinite`}
+      src={logo}
+      alt="logo"
+      w={26}
+      h={26}
+    />
 
     <Heading
       as="h4"

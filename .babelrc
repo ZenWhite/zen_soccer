@@ -11,6 +11,12 @@
           "Team": "./src/entities/Team"
         }
       }
+    ],
+    [
+      "auto-import",
+      {
+        "declarations": [{ "default": "React", "path": "react" }]
+      }
     ]
   ]
 }
