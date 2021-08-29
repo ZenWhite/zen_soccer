@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Flex, Heading, VStack } from '@chakra-ui/react'
 
-import { table } from './league.shape'
+import { headers } from './league.shape'
 
 import { Table } from 'components/Table/table.component'
 import { Search } from 'components/Search/search.component'
@@ -17,7 +17,7 @@ export const League = () => {
         <Search value={search} setValue={setSearch} />
       </Flex>
 
-      <Table {...table} />
+      <Table headers={headers} rows={[]} />
     </VStack>
   )
 }

@@ -6,8 +6,8 @@ export const Table = ({ headers, rows }) => (
   <_Table variant="striped">
     <Thead>
       <Tr>
-        {headers.map(({ content }) => (
-          <Th key={id('head-item')}>{content}</Th>
+        {headers.map((item) => (
+          <Th key={id('head-item')} {...item} />
         ))}
       </Tr>
     </Thead>
@@ -15,8 +15,8 @@ export const Table = ({ headers, rows }) => (
     <Tbody>
       {rows.map((row) => (
         <Tr key={id('row')}>
-          {row.map(({ content }) => (
-            <Td key={id('row-item')}>{content}</Td>
+          {row.map((item) => (
+            <Td key={id('row-item')} {...item} />
           ))}
         </Tr>
       ))}
