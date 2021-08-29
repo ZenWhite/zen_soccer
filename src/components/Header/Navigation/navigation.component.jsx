@@ -3,12 +3,14 @@ import { HStack, Link } from '@chakra-ui/react'
 
 import { links } from './navigation.shape'
 
+import { id } from 'utils/id'
+
 export const Navigation = () => (
   <HStack spacing={9} as="nav">
-    {links.map((link, id) => (
+    {links.map((link) => (
       <Link
         as={NavLink}
-        key={`header-link-${id}`}
+        key={id('header-link')}
         fontSize="sm"
         fontWeight="bold"
         exact
