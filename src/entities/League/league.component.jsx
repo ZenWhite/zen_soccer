@@ -1,17 +1,23 @@
+import { useState } from 'react'
 import { Flex, Heading, VStack } from '@chakra-ui/react'
 
 import { table } from './league.shape'
 
 import { Table } from 'components/Table/table.component'
+import { Search } from 'components/Search/search.component'
 
-export const League = () => (
-  <VStack as="section" spacing="48px" as="section" alignItems="flex-start">
-    <Flex justify="space-between" align="flex-end">
-      <Heading as="h1" size="4xl" children="Лиги" />
+export const League = () => {
+  const [search, setSearch] = useState()
 
-      {/* search */}
-    </Flex>
+  return (
+    <VStack as="section" spacing="48px" as="section" alignItems="flex-start">
+      <Flex justify="space-between" align="flex-end" w="100%">
+        <Heading as="h1" size="4xl" children="Лиги" />
 
-    <Table {...table} />
-  </VStack>
-)
+        <Search value={search} setValue={setSearch} />
+      </Flex>
+
+      <Table {...table} />
+    </VStack>
+  )
+}
