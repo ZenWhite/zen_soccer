@@ -2,3 +2,4 @@ node_modules
 .cache
 serve
 build
+.env.local

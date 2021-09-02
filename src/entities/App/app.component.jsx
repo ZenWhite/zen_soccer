@@ -10,6 +10,7 @@ import { Header } from 'components/Header/header.component'
 import { Footer } from 'components/Footer/footer.component'
 
 import { League } from 'League/league.component'
+import { Team } from 'Team/team.component'
 
 export const App = () => (
   <Router>
@@ -20,6 +21,7 @@ export const App = () => (
         <Container maxW="container.xl">
           <Switch>
             <Route path={['/', '/league']} exact component={League} />
+            <Route path="/team" component={Team} />
           </Switch>
         </Container>
       </Box>
