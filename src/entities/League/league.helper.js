@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react'
+
 import { row } from 'components/Table/table.helper'
 
 const props = ['name', 'place', 'start', 'end']
@@ -11,5 +13,5 @@ export const transform = (data) =>
       start: data?.currentSeason?.startDate,
       end: data?.currentSeason?.endDate
     },
-    [{ children: 'Подробнее' }]
+    [{ children: <Button size="md" variant="outline" children="Подробнее" /> }]
   )
