@@ -6,7 +6,7 @@ export const headers = [
     children: 'Страна'
   },
   {
-    children: 'Участники'
+    children: 'Цвета клуба'
   },
   {
     children: 'Основана'

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Flex, Heading, VStack } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import { Flex, Heading, VStack, Spinner } from '@chakra-ui/react'
 
 import { endpoints } from 'api/endpoints'
 import { useRequest } from 'hooks/useRequest'
@@ -9,12 +9,18 @@ import { headers } from './team.shape'
 import { Table } from 'components/Table/table.component'
 import { Search } from 'components/Search/search.component'
 
+import { transform } from './team.helper'
+
 export const Team = () => {
   const [search, setSearch] = useState()
 
-  const [state, getTeams, teams] = useRequest({
+  const [state, getTeams, data] = useRequest({
     endpoint: endpoints.teams
   })
+
+  useEffect(() => {
+    getTeams()
+  }, [])
 
   return (
     <VStack as="section" spacing="48px" as="section" alignItems="flex-start">
@@ -24,7 +30,11 @@ export const Team = () => {
         <Search value={search} setValue={setSearch} />
       </Flex>
 
-      <Table headers={headers} rows={[]} />
+      {state.loading ? (
+        <Spinner color="orange.300" size="xl" />
+      ) : (
+        <Table headers={headers} rows={data ? data.teams.map(transform) : []} />
+      )}
     </VStack>
   )
 }

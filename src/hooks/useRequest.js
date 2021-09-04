@@ -22,7 +22,5 @@ export const useRequest = (...args) => {
     }
   }
 
-  useEffect(() => action(), [])
-
   return [{ loading, error }, action, value]
 }
