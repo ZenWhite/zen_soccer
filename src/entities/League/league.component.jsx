@@ -12,7 +12,7 @@ import { Search } from 'components/Search/search.component'
 import { transform } from './league.helper'
 
 export const League = () => {
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState('')
 
   const [state, getLeagues, leagues] = useRequest({
     endpoint: endpoints.leagues
@@ -35,7 +35,15 @@ export const League = () => {
       ) : (
         <Table
           headers={headers}
-          rows={leagues ? leagues.competitions.map(transform) : []}
+          rows={
+            leagues
+              ? leagues.competitions
+                  .filter((league) =>
+                    league.name.match(new RegExp(search, 'gi'))
+                  )
+                  .map(transform)
+              : []
+          }
         />
       )}
     </VStack>
