@@ -1,4 +1,5 @@
 import { Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 import { row } from 'components/Table/table.helper'
 
@@ -13,5 +14,13 @@ export const transform = (data) =>
       start: data?.currentSeason?.startDate,
       end: data?.currentSeason?.endDate
     },
-    [{ children: <Button size="md" variant="outline" children="Подробнее" /> }]
+    [
+      {
+        children: (
+          <Link to={`/league/${data?.id}`}>
+            <Button size="md" variant="outline" children="Подробнее" />
+          </Link>
+        )
+      }
+    ]
   )
